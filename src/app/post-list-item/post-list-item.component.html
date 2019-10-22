@@ -1,0 +1,13 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': isloveItorNot() === 'vert',
+                'list-group-item-danger': isloveItorNot() === 'rouge',
+                'list-group-item-light' : isloveItorNot() === 'blank'}"> 
+    <div>
+        <span>{{ title }}</span>  
+        <span style="float: right;"> {{ created_at | date: 'short' }} </span>
+        <p>{{ content }}</p>
+        <div class="btn-toolbar" role="toolbar">
+            <button type="button" class="btn btn-success" (click)="onLoveIt()">love it!</button><button type="button" class="btn btn-danger" (click)="onDontLoveIt()">Don't love it!</button>
+        </div>
+    </div>
+</li>
